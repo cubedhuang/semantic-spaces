@@ -1,0 +1,1 @@
+_a_ has two uses: an interjection and an emphatic particle. As an interjection, it's very broad; it can indicate a pause for thought, understanding when learning something, astonishment at a fact, and more. As an emphatic particle, it's narrower, emphasizing the phrase that it's placed after, or the entire sentence if it's at the end.

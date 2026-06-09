@@ -1,17 +1,43 @@
 ---
+import "@fontsource-variable/source-serif-4/opsz.css";
+import "@fontsource-variable/source-serif-4/opsz-italic.css";
+import "../styles/index.css";
 
+import { render } from "astro:content";
+import { getCollection } from "astro:content";
+
+const words = await getCollection("words");
+words.sort((a, b) => a.id.localeCompare(b.id));
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>ilo Tani&rsquo;s Semantic Space Dictionary</title>
+    </head>
+    <body>
+        <main>
+            <h1>ilo Tani&rsquo;s Semantic Space Dictionary</h1>
+            <p>
+                I think some of these explanations might not be about semantic
+                spaces but kind of usage in general. That might be part of what
+                a semantic space is; I&rsquo;m not sure.
+            </p>
+            {
+                words.map(async (word) => {
+                    const { Content } = await render(word);
+                    return (
+                        <>
+                            <h2>{word.id}</h2>
+                            <Content />
+                        </>
+                    );
+                })
+            }
+        </main>
+    </body>
 </html>
