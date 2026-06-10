@@ -1,0 +1,1 @@
+The prototypical _lipu_ is a sheet of paper that records some information. _lipu_ refers to flat, bendable objects, like sheets of paper, leaves, and pancakes. _lipu_ also refers to documents that record information, like books, blog posts, and academic articles.
