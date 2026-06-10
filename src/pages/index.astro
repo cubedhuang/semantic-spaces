@@ -3,8 +3,7 @@ import "@fontsource-variable/source-serif-4/opsz.css";
 import "@fontsource-variable/source-serif-4/opsz-italic.css";
 import "../styles/index.css";
 
-import { render } from "astro:content";
-import { getCollection } from "astro:content";
+import { getCollection, render } from "astro:content";
 
 const words = await getCollection("words");
 words.sort((a, b) => a.id.localeCompare(b.id));
@@ -23,9 +22,13 @@ words.sort((a, b) => a.id.localeCompare(b.id));
         <main>
             <h1>ilo Tani&rsquo;s Semantic Space Dictionary</h1>
             <p>
-                I think some of these explanations might not be about semantic
-                spaces but kind of usage in general. That might be part of what
-                a semantic space is; I&rsquo;m not sure.
+                This is a semantic space dictionary that I&rsquo;m currently
+                working on. I tried not to read <a
+                    href="https://lipamanka.gay/essays/dictionary"
+                    rel="external">lipamanka&rsquo;s dictionary</a
+                > while writing this so that I would record my own ideas. Nonetheless,
+                some of the things here have definitely been influenced by what I&rsquo;ve
+                read from it in the past.
             </p>
             {
                 words.map(async (word) => {
