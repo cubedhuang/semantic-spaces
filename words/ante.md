@@ -1,1 +1,1 @@
-_ante_ is about differences. If something is _ante_, there's something about it that's different from some other thing that I'm talking about.
+_ante_ is about differences. If something is _ante_, there's something about it that's different from some other thing that I'm talking about. That difference could be between an object today and the same object yesterday, or it could be between an object in my left hand and my right hand.
