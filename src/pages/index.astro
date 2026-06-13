@@ -20,13 +20,13 @@ words.sort((a, b) => a.id.localeCompare(b.id));
 
         <script is:inline>
             const key = "kon.nimi.li:theme";
-            const theme = localStorage.getItem(key);
+            const theme = localStorage.getItem(key) ?? "system";
             let loaded = false;
             const viewTransition = (fn) =>
                 loaded && document.startViewTransition
                     ? document.startViewTransition(() => fn())
                     : fn();
-            setTheme(theme ?? "system");
+            setTheme(theme);
             function setTheme(theme) {
                 localStorage.setItem(key, theme);
                 const isDark =
