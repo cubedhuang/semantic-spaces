@@ -48,6 +48,7 @@ words.sort((a, b) => a.id.localeCompare(b.id));
                 document
                     .querySelectorAll("button[data-theme]")
                     .forEach((button) => {
+                        button.disabled = theme === button.dataset.theme;
                         button.addEventListener("click", () => {
                             setTheme(button.dataset.theme);
                         });
