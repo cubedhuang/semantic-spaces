@@ -84,20 +84,6 @@ words.sort((a, b) => a.id.localeCompare(b.id));
                         <>
                             <h2>{word.id}</h2>
                             <Content />
-                            {word.data.examples && (
-                                <ul class="examples">
-                                    {word.data.examples.map((example) => (
-                                        <li>
-                                            <figure>
-                                                <p lang="tok">{example.tok}</p>
-                                                <figcaption lang="en">
-                                                    {example.en}
-                                                </figcaption>
-                                            </figure>
-                                        </li>
-                                    ))}
-                                </ul>
-                            )}
                         </>
                     );
                 })
@@ -138,23 +124,5 @@ words.sort((a, b) => a.id.localeCompare(b.id));
         text-decoration: none;
         cursor: unset;
         color: var(--text);
-    }
-    .examples {
-        margin-inline: 0;
-        padding: 0;
-        list-style: none;
-    }
-    .examples li {
-        margin-inline: 0;
-        padding: 0;
-        border-left: 3px solid var(--link);
-    }
-    .examples li figure {
-        margin: 0;
-        margin-left: 1rem;
-    }
-    .examples li figure p {
-        margin: 0;
-        font-style: italic;
     }
 </style>

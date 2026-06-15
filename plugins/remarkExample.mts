@@ -1,0 +1,75 @@
+import type { Paragraph, PhrasingContent, Root, Text } from "mdast";
+import { visit } from "unist-util-visit";
+import type { VFile } from "vfile";
+
+const PREFIX = /^\s*([A-Za-z][A-Za-z-]*)\s*:\s*/;
+
+type Section = {
+  lang: string;
+  children: PhrasingContent[];
+};
+
+export default function remarkExample() {
+  return (tree: Root, file: VFile) => {
+    visit(tree, "containerDirective", (node) => {
+      if (node.name !== "ex" && node.name !== "example") return;
+
+      const p = node.children[0];
+      if (p?.type !== "paragraph") return;
+      const lines = splitLines(p.children);
+      const sections = buildSections(lines);
+      const data = node.data || (node.data = {});
+      // @ts-expect-error hName doesn't have types but will be used
+      data.hName = "figure";
+      node.children = sections.map(sectionToNode);
+    });
+  };
+}
+
+function splitLines(nodes: readonly PhrasingContent[]): PhrasingContent[][] {
+  const lines: PhrasingContent[][] = [[]];
+  for (const node of nodes) {
+    if (node.type === "text" && node.value.includes("\n")) {
+      node.value.split("\n").forEach((part, i) => {
+        if (i > 0) lines.push([]);
+        lines[lines.length - 1].push({ type: "text", value: part });
+      });
+    } else {
+      lines[lines.length - 1].push(node);
+    }
+  }
+  return lines.filter((line) =>
+    line.some((n) => n.type !== "text" || n.value.trim() !== ""),
+  );
+}
+
+function buildSections(lines: PhrasingContent[][]): Section[] {
+  const sections: Section[] = [];
+  let current: Section | null = null;
+  for (const line of lines) {
+    const head = line[0];
+    const match = head?.type === "text" ? head.value.match(PREFIX) : null;
+    if (match) {
+      const rest = line.slice(1);
+      const leading = (head as Text).value.slice(match[0].length);
+      if (leading !== "") rest.unshift({ type: "text", value: leading });
+      current = { lang: match[1], children: rest };
+      sections.push(current);
+    } else if (current) {
+      current.children.push({ type: "break" }, ...line);
+    }
+  }
+  return sections;
+}
+
+function sectionToNode(section: Section, index: number): Paragraph {
+  return {
+    type: "paragraph",
+    data: {
+      // @ts-expect-error hName doesn't have types but will be used
+      hName: index === 0 ? "p" : "figcaption",
+      hProperties: { lang: section.lang },
+    },
+    children: section.children,
+  };
+}
