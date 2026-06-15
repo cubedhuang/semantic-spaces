@@ -25,13 +25,10 @@ nav {
     margin-inline: auto;
 }
 
-nav {
-    margin-block-end: 1rem;
-}
-
 h1,
 h2 {
     line-height: 1.1;
+    text-wrap: balance;
 }
 
 h1 {

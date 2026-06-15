@@ -1,0 +1,1 @@
+_tomo_ refers to enclosed spaces, primarily ones that house living things. This can be a building or a room within that building. _tomo_ are not necessarily stationary; trains and automobiles are enclosed spaces for people, so they're often described as _tomo_.
