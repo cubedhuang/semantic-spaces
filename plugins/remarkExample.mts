@@ -62,12 +62,16 @@ function buildSections(lines: PhrasingContent[][]): Section[] {
   return sections;
 }
 
-function sectionToNode(section: Section, index: number): Paragraph {
+function sectionToNode(
+  section: Section,
+  index: number,
+  array: Section[],
+): Paragraph {
   return {
     type: "paragraph",
     data: {
       // @ts-expect-error hName doesn't have types but will be used
-      hName: index === 0 ? "p" : "figcaption",
+      hName: index === array.length - 1 ? "figcaption" : "p",
       hProperties: { lang: section.lang },
     },
     children: section.children,

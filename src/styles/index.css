@@ -54,5 +54,7 @@ figure {
 }
 figure p {
     margin: 0;
+}
+figure [lang="tok"] {
     font-style: italic;
 }
