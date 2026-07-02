@@ -5,10 +5,10 @@ tok: mi o pali sin e ni.
 en: We need to do this work again.
 :::
 
-In this case, there has already been some _pali_, but we need to perform a new instance of that work. _sin_ describes repetition of the task.
+In this case, there has already been some _pali_, but we need to perform a new instance of that work. _sin_ describes the repetition of the task.
 
 :::ex
-tok: sona pi tawa ijo la jan Netan li kama e nasin sin.
+tok: sona pi tawa ijo la jan Neton li pali e nasin sin.
 en: To describe motion, Newton created a new system.
 :::
 

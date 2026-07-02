@@ -1,0 +1,1 @@
+The prototypical _lawa_ is the head of an animal. More generally, _lawa_ describes control, typically the part of a whole that controls the rest of it. That includes sets of rules, a restaurant manager, the mind of a creature, or a nation's government.
