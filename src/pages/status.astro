@@ -5,9 +5,11 @@ import Layout from "../layouts/Layout.astro";
 
 const words = await getCollection("words");
 
+const threshold = 300;
+
 const empty = words.filter((word) => !word.body?.length);
-const short = words.filter((word) => word.body && word.body.length < 200);
-const done = words.filter((word) => word.body && word.body.length >= 200);
+const short = words.filter((word) => word.body && word.body.length < threshold);
+const done = words.filter((word) => word.body && word.body.length >= threshold);
 ---
 
 <Layout
@@ -28,7 +30,7 @@ const done = words.filter((word) => word.body && word.body.length >= 200);
         }
     </p>
     <p>
-        <b>{short.length} / {words.length}</b> entries with fewer than 200 characters:
+        <b>{short.length} / {words.length}</b> entries with fewer than {threshold} characters:
         {
             short.map((word, i) => (
                 <>
