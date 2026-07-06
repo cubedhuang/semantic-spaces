@@ -1,0 +1,46 @@
+---
+import { getCollection } from "astro:content";
+
+import Layout from "../layouts/Layout.astro";
+
+const words = await getCollection("words");
+
+const empty = words.filter((word) => !word.body?.length);
+const short = words.filter((word) => word.body && word.body.length < 200);
+const done = words.filter((word) => word.body && word.body.length >= 200);
+---
+
+<Layout
+    title="Status | ilo Tani's Semantic Space Dictionary"
+    description="Progress"
+>
+    <h1>Status <a href="/">↩</a></h1>
+
+    <p>
+        <b>{done.length} / {words.length}</b> entries done:
+        {
+            done.map((word, i) => (
+                <>
+                    <!-- prettier-ignore -->
+                    <a href={`/${word.id}`}>{word.id}</a>{i !== done.length - 1 && ", "}
+                </>
+            ))
+        }
+    </p>
+    <p>
+        <b>{short.length} / {words.length}</b> entries with fewer than 200 characters:
+        {
+            short.map((word, i) => (
+                <>
+                    <!-- prettier-ignore -->
+                    <a href={`/${word.id}`}>{word.id}</a>{i !== short.length - 1 && ", "}
+                </>
+            ))
+        }
+    </p>
+    <p>
+        <b>{empty.length} / {words.length}</b> entries empty: {
+            empty.map((word) => word.id).join(", ")
+        }
+    </p>
+</Layout>

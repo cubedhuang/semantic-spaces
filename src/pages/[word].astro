@@ -30,14 +30,3 @@ const frontmatter = word.rendered?.metadata!.frontmatter! as Record<
     <h1>{wordId} <a href={`/#${wordId}`}>↩</a></h1>
     <Content />
 </Layout>
-
-<style>
-    a {
-        font-size: 1rem;
-        text-decoration: none;
-        margin-left: 0.25rem;
-    }
-    a:hover {
-        text-decoration: underline;
-    }
-</style>

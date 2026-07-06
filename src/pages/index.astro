@@ -20,6 +20,9 @@ words.sort((a, b) => a.id.localeCompare(b.id));
         things here have definitely been influenced by what I&rsquo;ve read from it
         in the past.
     </p>
+    <p>
+        Check out the <a href="/status">status</a> page for progress information.
+    </p>
     {
         words.map(async (word) => {
             const { Content } = await render(word);
