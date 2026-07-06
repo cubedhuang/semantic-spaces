@@ -10,6 +10,10 @@
     --link: oklch(0.8 0.15 270);
 }
 
+html {
+    scroll-padding-top: 3rem;
+}
+
 body {
     background: var(--background);
     color: var(--text);
