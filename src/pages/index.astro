@@ -6,7 +6,10 @@ const words = await getCollection("words");
 words.sort((a, b) => a.id.localeCompare(b.id));
 ---
 
-<Layout title="ilo Tani’s Semantic Space Dictionary">
+<Layout
+    title="ilo Tani’s Semantic Space Dictionary"
+    description="A semantic space dictionary for Toki Pona, by ilo Tani."
+>
     <h1>ilo Tani&rsquo;s Semantic Space Dictionary</h1>
     <p>
         This is a semantic space dictionary that I&rsquo;m currently working on.
@@ -39,5 +42,9 @@ words.sort((a, b) => a.id.localeCompare(b.id));
     }
     h2 a:hover {
         text-decoration: underline;
+    }
+    article {
+        margin-top: 2rem;
+        border-top: 1px solid var(--muted);
     }
 </style>

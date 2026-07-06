@@ -16,9 +16,17 @@ const words = await getCollection("words");
 words.sort((a, b) => a.id.localeCompare(b.id));
 const word = words.find((word) => word.id === wordId)!;
 const { Content } = await render(word);
+
+const frontmatter = word.rendered?.metadata!.frontmatter! as Record<
+    string,
+    string
+>;
 ---
 
-<Layout title={`${word.id} | ilo Tani's Semantic Space Dictionary`}>
+<Layout
+    title={`${word.id} | ilo Tani's Semantic Space Dictionary`}
+    description={frontmatter.ogDescription}
+>
     <h1>{wordId} <a href={`/#${wordId}`}>↩</a></h1>
     <Content />
 </Layout>
