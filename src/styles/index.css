@@ -23,6 +23,11 @@ body {
     line-height: 1.7;
 }
 
+:focus-visible {
+    outline: 2px solid var(--link);
+    outline-offset: 4px;
+}
+
 main,
 nav {
     max-width: 70ch;
