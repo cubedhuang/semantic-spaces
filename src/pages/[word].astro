@@ -1,0 +1,35 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection, render } from "astro:content";
+
+import Layout from "../layouts/Layout.astro";
+
+export const getStaticPaths = (async () => {
+    const words = await getCollection("words");
+    words.sort((a, b) => a.id.localeCompare(b.id));
+    return words.map((word) => ({ params: { word: word.id } }));
+}) satisfies GetStaticPaths;
+
+const { word: wordId } = Astro.params;
+
+const words = await getCollection("words");
+words.sort((a, b) => a.id.localeCompare(b.id));
+const word = words.find((word) => word.id === wordId)!;
+const { Content } = await render(word);
+---
+
+<Layout title={`${word.id} | ilo Tani's Semantic Space Dictionary`}>
+    <h1>{wordId} <a href={`/#${wordId}`}>↩</a></h1>
+    <Content />
+</Layout>
+
+<style>
+    a {
+        font-size: 1rem;
+        text-decoration: none;
+        margin-left: 0.25rem;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+</style>
