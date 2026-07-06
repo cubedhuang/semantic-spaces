@@ -1,1 +1,5 @@
-With _nasin_, Toki Pona draws a conceptual metaphor between paths, directions, and methods, and systems of methods. Physically, _nasin_ can refer to sidewalks, train tracks, roads, and rivers. If I point anywhere, the direction in which I'm pointing is a _nasin_. Instructions to assembly IKEA furniture are _nasin_. Ways of life like veganism and Islam are _nasin_, as well as systems like the grammar of a language and socialism.
+With _nasin_, Toki Pona draws a conceptual metaphor between paths, directions, methods, and systems of methods.
+
+Physically, _nasin_ can refer to paths like sidewalks, train tracks, roads, and rivers. If I point anywhere, the direction in which I'm pointing is a _nasin_.
+
+Instructions to assembly IKEA furniture are _nasin_. Ways of life like veganism and Islam are _nasin_, as well as systems like the grammar of a language and socialism.
