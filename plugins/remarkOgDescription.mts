@@ -7,6 +7,7 @@ export default function remarkOgDescription() {
     let plainText = toString(tree)
       .replace(/\s+/g, " ")
       .replaceAll(".", ". ")
+      .replaceAll(",", ", ")
       .trim();
     if (plainText.length >= 160) {
       plainText = plainText.substring(0, 159) + "…";
