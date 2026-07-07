@@ -13,10 +13,10 @@ Astro.url.pathname;
 
 <style>
     nav {
-        margin-block-end: 2rem;
+        margin-block-end: 2em;
         display: flex;
         align-items: baseline;
-        gap: 1rem;
+        gap: 1em;
     }
     nav a {
         margin-inline-start: auto;
@@ -36,6 +36,7 @@ Astro.url.pathname;
         text-decoration: underline;
     }
     nav button {
+        position: relative;
         margin: 0;
         padding: 0;
     }
@@ -43,5 +44,16 @@ Astro.url.pathname;
         text-decoration: none;
         cursor: unset;
         color: var(--text);
+    }
+    nav button:disabled::after {
+        content: "";
+        position: absolute;
+        display: block;
+        top: calc(100% - 0.25rem);
+        left: 50%;
+        background: var(--text);
+        width: 0.25rem;
+        height: 0.25rem;
+        border-radius: 100%;
     }
 </style>
