@@ -1,8 +1,8 @@
 _moku_ refers to consumption. This includes both eating and drinking.
 
 :::ex
-tok: mi moku e kili e telo.
-en: I ate fruit and drank water.
+tok: mi **moku** e kili e telo.
+en: I **ate** fruit and **drank** water.
 :::
 
 What does consumption mean?
