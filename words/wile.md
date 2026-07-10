@@ -19,7 +19,7 @@ When the need of a subject is not connected to a desire, speakers often change t
 :::ex
 tok: sijelo mi li **wile** e lape.
 en: My body **requires** sleep.
-en: I need sleep.
+en: I **need** sleep.
 :::
 
 In other cases, _o_ is used instead.

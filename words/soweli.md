@@ -1,1 +1,1 @@
-_soweli_ refers warm creatures.
+_soweli_ refers to warm creatures.
