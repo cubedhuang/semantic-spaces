@@ -5,9 +5,9 @@ import type { VFile } from "vfile";
 export default function remarkOgDescription() {
   return function (tree: Root, file: VFile) {
     let plainText = toString(tree)
-      .replace(/\s+/g, " ")
       .replaceAll(".", ". ")
       .replaceAll(",", ", ")
+      .replace(/\s+/g, " ")
       .trim();
     if (plainText.length >= 160) {
       plainText = plainText.substring(0, 159) + "…";

@@ -8,8 +8,12 @@ const words = await getCollection("words");
 const threshold = 300;
 
 const empty = words.filter((word) => !word.body?.length);
-const short = words.filter((word) => word.body && word.body.length < threshold);
-const done = words.filter((word) => word.body && word.body.length >= threshold);
+const short = words
+    .filter((word) => word.body && word.body.length < threshold)
+    .sort((a, b) => b.body.length - a.body.length);
+const done = words
+    .filter((word) => word.body && word.body.length >= threshold)
+    .sort((a, b) => b.body.length - a.body.length);
 ---
 
 <Layout
@@ -23,19 +27,23 @@ const done = words.filter((word) => word.body && word.body.length >= threshold);
         {
             done.map((word, i) => (
                 <>
+                    <a href={`/${word.id}`}>{word.id}</a>
                     <!-- prettier-ignore -->
-                    <a href={`/${word.id}`}>{word.id}</a>{i !== done.length - 1 && ", "}
+                    ({word.body.length}){i !== done.length - 1 && ", "}
                 </>
             ))
         }
     </p>
     <p>
-        <b>{short.length} / {words.length}</b> entries with fewer than {threshold} characters:
+        <b>{short.length} / {words.length}</b> entries with fewer than {
+            threshold
+        } characters:
         {
             short.map((word, i) => (
                 <>
+                    <a href={`/${word.id}`}>{word.id}</a>
                     <!-- prettier-ignore -->
-                    <a href={`/${word.id}`}>{word.id}</a>{i !== short.length - 1 && ", "}
+                    ({word.body.length}){i !== short.length - 1 && ", "}
                 </>
             ))
         }
