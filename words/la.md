@@ -1,4 +1,4 @@
-_la_ is a grammatical "context-marking" particle. Different uses include context marking
+_la_ is a grammatical "context-marking" particle. But context includes a lot of different things!
 
 - high adverbs "ken la" "lon la" "pona la"
 - topicalizing constituents
