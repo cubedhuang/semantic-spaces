@@ -33,8 +33,8 @@ const done = words
     }
   </p>
   <p>
-    <b>{short.length} / {words.length}</b> entries with fewer than
-    {threshold} characters: {
+    <b>{short.length} / {words.length}</b> entries with fewer than {threshold}
+    {" "}characters: {
       short.map((word, i) => (
         <>
           <a href={`/${word.id}`}>{word.id}</a> ({word.body.length})
