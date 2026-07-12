@@ -1,4 +1,11 @@
-_ala_ refers to nothing. As a modifier, it either negates a predicate or specifies that there are none of something.
+_ala_ refers to nothing.
+
+:::ex
+tok: ona li lukin e **ala**.
+en: She's looking at **nothing**.
+:::
+
+As a modifier, it either negates a predicate or specifies that there are none of something.
 
 :::ex
 tok: mi moku **ala** a.
