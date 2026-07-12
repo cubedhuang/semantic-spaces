@@ -1,5 +1,10 @@
-_kon_ refers to gases as well as other invisible things.
+_kon_ refers to gases as well as some kinds of invisible things.
 
-Many kinds of _kon_ are transparent. A cloud is a kind of _kon_, (is this true? maybe it is ko because it looks like ko)
+A cloud is a kind of _kon_, since it's a mass of gas in the sky. A ghost is different kind of _kon_, an invisible agent.
 
-_kon_ is also often used to refer to the meaning of a word. I don't know why maybe I'll add something here at some point
+_kon_ is often used to refer to the essence of something. In particular, it may refer to the meaning of a word.
+
+:::ex
+tok: nimi 'lipu' la **kon** tu li lon.
+en: The word 'lipu' has two **meanings**.
+:::
