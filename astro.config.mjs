@@ -15,4 +15,7 @@ export default defineConfig({
       features: { directive: true },
     }),
   },
+  prefetch: {
+    prefetchAll: true
+  }
 });
