@@ -5,7 +5,7 @@ tok: tomo ni la **suno** tu li lon.
 en: There are two **lights** in this room.
 :::
 
-_suno_ also refers to days. This is one of the most common cross-linguistic metaphors, with 412 realizations in [DatSemShift 3.0](https://datsemshift.ru/shift1007).
+_suno_ also refers to days. This is one of the most common cross-linguistic metaphors, with [412 realizations](https://datsemshift.ru/shift1007) in DatSemShift 3.0.
 
 :::ex
 tok: **suno** tu la mi lon ma Putape.
