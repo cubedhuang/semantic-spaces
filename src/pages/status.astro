@@ -27,8 +27,8 @@ const done = words
     {
       done.map((word, i) => (
         <>
-          <a href={`/${word.id}`}>{word.id}</a>({word.body.length})
-          {`(${word.body.length})` + (i !== done.length - 1 && ", ")}
+          <a href={`/${word.id}`}>{word.id}</a> ({word.body.length})
+          {i !== done.length - 1 && ", "}
         </>
       ))
     }
@@ -38,8 +38,8 @@ const done = words
     {
       short.map((word, i) => (
         <>
-          <a href={`/${word.id}`}>{word.id}</a>
-          {`(${word.body.length})` + (i !== short.length - 1 && ", ")}
+          <a href={`/${word.id}`}>{word.id}</a> ({word.body.length})
+          {i !== short.length - 1 && ", "}
         </>
       ))
     }
