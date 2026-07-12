@@ -3,6 +3,7 @@ import type { GetStaticPaths } from "astro";
 import { getCollection, render } from "astro:content";
 
 import Layout from "../layouts/Layout.astro";
+import { getOgDescription } from "../utils/getOgDescription";
 
 export const getStaticPaths = (async () => {
     const words = await getCollection("words");
@@ -16,16 +17,12 @@ const words = await getCollection("words");
 words.sort((a, b) => a.id.localeCompare(b.id));
 const word = words.find((word) => word.id === wordId)!;
 const { Content } = await render(word);
-
-const frontmatter = word.rendered?.metadata!.frontmatter! as Record<
-    string,
-    string
->;
+const ogDescription = getOgDescription(word.rendered?.html ?? "");
 ---
 
 <Layout
     title={`${word.id} | ilo Tani's Semantic Space Dictionary`}
-    description={frontmatter.ogDescription}
+    description={ogDescription}
 >
     <h1>
         {wordId}

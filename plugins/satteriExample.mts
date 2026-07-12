@@ -1,6 +1,6 @@
-import type { Paragraph, PhrasingContent, Root, Text } from "mdast";
-import { visit } from "unist-util-visit";
-import type { VFile } from "vfile";
+import { defineMdastPlugin, type MdastPluginDefinition } from "satteri";
+import type { Paragraph, PhrasingContent, Text } from "mdast";
+import type { ContainerDirective } from "mdast-util-directive";
 
 const PREFIX = /^\s*([A-Za-z][A-Za-z-]*)\s*:\s*/;
 
@@ -9,21 +9,24 @@ type Section = {
   children: PhrasingContent[];
 };
 
-export default function remarkExample() {
-  return (tree: Root, file: VFile) => {
-    visit(tree, "containerDirective", (node) => {
+export default function satteriExample(): MdastPluginDefinition {
+  return defineMdastPlugin({
+    name: "example",
+    containerDirective(node: ContainerDirective) {
       if (node.name !== "ex" && node.name !== "example") return;
 
       const p = node.children[0];
       if (p?.type !== "paragraph") return;
       const lines = splitLines(p.children);
       const sections = buildSections(lines);
-      const data = node.data || (node.data = {});
-      // @ts-expect-error hName doesn't have types but will be used
-      data.hName = "figure";
-      node.children = sections.map(sectionToNode);
-    });
-  };
+
+      return {
+        ...node,
+        data: { ...node.data, hName: "figure" },
+        children: sections.map(sectionToNode),
+      };
+    },
+  });
 }
 
 function splitLines(nodes: readonly PhrasingContent[]): PhrasingContent[][] {
