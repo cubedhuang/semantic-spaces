@@ -12,7 +12,7 @@ tok: tenpo musi li **pini** la mi o weka e jaki.
 en: We'll need to clean up when the party is **over**.
 :::
 
-The temporal meaning extends to refer to the *past* in general.
+The temporal meaning extends to refer to the _past_ in general.
 
 :::ex
 tok: lipu pini li pona a tawa lipu ni

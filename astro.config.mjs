@@ -1,7 +1,7 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import cloudflare from "@astrojs/cloudflare";
-import { satteri } from '@astrojs/markdown-satteri';
+import { satteri } from "@astrojs/markdown-satteri";
 
 import satteriExample from "./plugins/satteriExample.mjs";
 

@@ -5,7 +5,7 @@ tok: mi moku **ala** a.
 en: I have**n't** eaten!
 :::
 
-When used as a modifier on a noun, it normally indicates that there *aren't* any of that noun involved.
+When used as a modifier on a noun, it normally indicates that there _aren't_ any of that noun involved.
 
 :::ex
 tok: jan **ala** li lon tomo ni.

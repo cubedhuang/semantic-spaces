@@ -1,8 +1,8 @@
-_ale_ refers to everything. 
+_ale_ refers to everything.
 
 _ale_ is most commonly used as a modifier that refers to all instances of a noun. _ma ale_ refers to everywhere, _jan ale_ refers to everyone, and _ijo ale_ refers to everything.
 
-When used as a noun, _ale_ may refer to a whole of something. 
+When used as a noun, _ale_ may refer to a whole of something.
 
 :::ex
 tok: mi lukin e **ale** lipu.

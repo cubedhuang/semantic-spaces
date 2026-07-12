@@ -1,34 +1,32 @@
 <script is:inline>
-    const key = "kon.nimi.li:theme";
-    const theme = localStorage.getItem(key) ?? "system";
-    let loaded = false;
-    const viewTransition = (fn) =>
-        loaded && document.startViewTransition
-            ? document.startViewTransition(() => fn())
-            : fn();
-    setTheme(theme);
-    function setTheme(theme) {
-        localStorage.setItem(key, theme);
-        const isDark =
-            theme === "system"
-                ? window.matchMedia("(prefers-color-scheme: dark)").matches
-                : theme === "dark";
-        viewTransition(() => {
-            document.documentElement.classList.toggle("dark", isDark);
-            document
-                .querySelectorAll("button[data-theme]")
-                .forEach((button) => {
-                    button.disabled = theme === button.dataset.theme;
-                });
-        });
-    }
-    document.addEventListener("DOMContentLoaded", () => {
-        loaded = true;
-        document.querySelectorAll("button[data-theme]").forEach((button) => {
-            button.disabled = theme === button.dataset.theme;
-            button.addEventListener("click", () => {
-                setTheme(button.dataset.theme);
-            });
-        });
+  const key = "kon.nimi.li:theme";
+  const theme = localStorage.getItem(key) ?? "system";
+  let loaded = false;
+  const viewTransition = (fn) =>
+    loaded && document.startViewTransition
+      ? document.startViewTransition(() => fn())
+      : fn();
+  setTheme(theme);
+  function setTheme(theme) {
+    localStorage.setItem(key, theme);
+    const isDark =
+      theme === "system"
+        ? window.matchMedia("(prefers-color-scheme: dark)").matches
+        : theme === "dark";
+    viewTransition(() => {
+      document.documentElement.classList.toggle("dark", isDark);
+      document.querySelectorAll("button[data-theme]").forEach((button) => {
+        button.disabled = theme === button.dataset.theme;
+      });
     });
+  }
+  document.addEventListener("DOMContentLoaded", () => {
+    loaded = true;
+    document.querySelectorAll("button[data-theme]").forEach((button) => {
+      button.disabled = theme === button.dataset.theme;
+      button.addEventListener("click", () => {
+        setTheme(button.dataset.theme);
+      });
+    });
+  });
 </script>

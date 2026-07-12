@@ -1,4 +1,4 @@
-_a_ has two uses: an interjection and an emphatic particle. As an interjection, it's very broad; it can indicate a pause for thought, a realization when learning something, astonishment at a fact, and more. 
+_a_ has two uses: an interjection and an emphatic particle. As an interjection, it's very broad; it can indicate a pause for thought, a realization when learning something, astonishment at a fact, and more.
 
 :::ex
 tok: **a**, mi sona ala e ni.

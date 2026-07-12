@@ -1,89 +1,89 @@
 :root {
-    --background: oklch(0.99 0.002 10);
-    --text: oklch(0.2 0.02 10);
-    --link: oklch(0.5 0.15 10);
-    --muted: oklch(0.75 0.02 10);
+  --background: oklch(0.99 0.002 10);
+  --text: oklch(0.2 0.02 10);
+  --link: oklch(0.5 0.15 10);
+  --muted: oklch(0.75 0.02 10);
 }
 
 .dark {
-    --background: oklch(0.19 0.015 270);
-    --text: oklch(0.95 0.01 30);
-    --link: oklch(0.8 0.15 270);
-    --muted: oklch(0.4 0.02 270);
+  --background: oklch(0.19 0.015 270);
+  --text: oklch(0.95 0.01 30);
+  --link: oklch(0.8 0.15 270);
+  --muted: oklch(0.4 0.02 270);
 }
 
 html {
-    scroll-padding-top: 4em;
+  scroll-padding-top: 4em;
 }
 
 body {
-    background: var(--background);
-    color: var(--text);
-    font-family: "Source Serif 4 Variable", serif;
-    font-size: 1.125rem;
-    line-height: 1.7;
-    margin: 0;
-    padding: 3em 1em 6em 1em;
+  background: var(--background);
+  color: var(--text);
+  font-family: "Source Serif 4 Variable", serif;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  margin: 0;
+  padding: 3em 1em 6em 1em;
 }
 
 @media (min-width: 784px) {
-    body {
-        font-size: 1.25rem;
-    }
+  body {
+    font-size: 1.25rem;
+  }
 }
 
 :focus-visible {
-    outline: 2px solid var(--link);
-    outline-offset: 4px;
+  outline: 2px solid var(--link);
+  outline-offset: 4px;
 }
 
 main,
 nav {
-    max-width: 70ch;
-    margin-inline: auto;
+  max-width: 70ch;
+  margin-inline: auto;
 }
 
 h1,
 h2 {
-    line-height: 1.1;
-    text-wrap: balance;
+  line-height: 1.1;
+  text-wrap: balance;
 }
 
 h1 {
-    font-size: 2em;
-    margin-block: 0 0.5em;
+  font-size: 2em;
+  margin-block: 0 0.5em;
 }
 h1 a {
-    font-size: 1rem;
-    text-decoration: none;
-    margin-left: 0.25rem;
+  font-size: 1rem;
+  text-decoration: none;
+  margin-left: 0.25rem;
 }
 h1 a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 h2 {
-    font-size: 1.5em;
-    margin-block: 1.333em 0.75em;
+  font-size: 1.5em;
+  margin-block: 1.333em 0.75em;
 }
 
 p {
-    margin-block-start: 0;
+  margin-block-start: 0;
 }
 
 a {
-    color: var(--link);
+  color: var(--link);
 }
 
 figure {
-    margin: 0;
-    margin-block-end: 1em;
-    padding-left: 1em;
-    border-left: 3px solid var(--link);
+  margin: 0;
+  margin-block-end: 1em;
+  padding-left: 1em;
+  border-left: 3px solid var(--link);
 }
 figure p {
-    margin: 0;
+  margin: 0;
 }
 figure [lang="tok"] {
-    font-style: italic;
+  font-style: italic;
 }

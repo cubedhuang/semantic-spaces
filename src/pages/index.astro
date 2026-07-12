@@ -7,47 +7,46 @@ words.sort((a, b) => a.id.localeCompare(b.id));
 ---
 
 <Layout
-    title="ilo Tani’s Semantic Space Dictionary"
-    description="A semantic space dictionary for Toki Pona, by ilo Tani."
+  title="ilo Tani’s Semantic Space Dictionary"
+  description="A semantic space dictionary for Toki Pona, by ilo Tani."
 >
-    <h1>ilo Tani&rsquo;s Semantic Space Dictionary</h1>
-    <p>
-        This is a semantic space dictionary that I&rsquo;m currently working on.
-        I tried not to read <a
-            href="https://lipamanka.gay/essays/dictionary"
-            rel="external">lipamanka&rsquo;s dictionary</a
-        > while writing this so that I would record my own ideas, but many of the
-        things here have definitely been influenced by what I&rsquo;ve read from it
-        in the past.
-    </p>
-    <p>
-        Check out the <a href="/status">status</a> page for progress information.
-    </p>
-    {
-        words.map(async (word) => {
-            const { Content } = await render(word);
-            return (
-                <article>
-                    <h2 id={word.id}>
-                        <a href={`/${word.id}`}>{word.id}</a>
-                    </h2>
-                    <Content />
-                </article>
-            );
-        })
-    }
+  <h1>ilo Tani&rsquo;s Semantic Space Dictionary</h1>
+  <p>
+    This is a semantic space dictionary that I&rsquo;m currently working on. I
+    tried not to read <a
+      href="https://lipamanka.gay/essays/dictionary"
+      rel="external">lipamanka&rsquo;s dictionary</a
+    > while writing this so that I would record my own ideas, but many of the things
+    here have definitely been influenced by what I&rsquo;ve read from it in the past.
+  </p>
+  <p>
+    Check out the <a href="/status">status</a> page for progress information.
+  </p>
+  {
+    words.map(async (word) => {
+      const { Content } = await render(word);
+      return (
+        <article>
+          <h2 id={word.id}>
+            <a href={`/${word.id}`}>{word.id}</a>
+          </h2>
+          <Content />
+        </article>
+      );
+    })
+  }
 </Layout>
 
 <style>
-    h2 a {
-        color: inherit;
-        text-decoration: none;
-    }
-    h2 a:hover {
-        text-decoration: underline;
-    }
-    article {
-        margin-top: 2em;
-        border-top: 1px solid var(--muted);
-    }
+  h2 a {
+    color: inherit;
+    text-decoration: none;
+  }
+  h2 a:hover {
+    text-decoration: underline;
+  }
+  article {
+    margin-top: 2em;
+    border-top: 1px solid var(--muted);
+  }
 </style>

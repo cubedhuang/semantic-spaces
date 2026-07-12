@@ -1,4 +1,4 @@
-_waso_ refers to creatures that can fly in the air. Bats and most birds are _waso_. 
+_waso_ refers to creatures that can fly in the air. Bats and most birds are _waso_.
 
 Some speakers will use _waso_ to describe flightless birds like kiwis and emus, but it's also common to use _soweli_ to refer to these animals. Kiwis are interesting because they have the _shape_ of a prototypical _waso_ but aren't able to fly.
 

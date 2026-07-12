@@ -11,12 +11,15 @@
     "preview": "bun run build && wrangler dev",
     "astro": "astro",
     "generate-types": "wrangler types",
-    "deploy": "bun run build && wrangler deploy"
+    "deploy": "bun run build && wrangler deploy",
+    "format": "bun run prettier . --write"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^14.1.2",
     "@fontsource-variable/source-serif-4": "^5.2.9",
-    "astro": "^7.0.7"
+    "astro": "^7.0.7",
+    "prettier": "^3.9.5",
+    "prettier-plugin-astro": "^0.14.1"
   },
   "devDependencies": {
     "wrangler": "^4.110.0"

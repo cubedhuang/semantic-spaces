@@ -1,55 +1,55 @@
 <nav>
-    <button data-theme="system">system</button>
-    <button data-theme="light">light</button>
-    <button data-theme="dark">dark</button>
-    <a href="https://github.com/cubedhuang/semantic-spaces" rel="external">
-        GitHub
-    </a>
+  <button data-theme="system">system</button>
+  <button data-theme="light">light</button>
+  <button data-theme="dark">dark</button>
+  <a href="https://github.com/cubedhuang/semantic-spaces" rel="external">
+    GitHub
+  </a>
 </nav>
 
 <style>
-    nav {
-        margin-block-end: 2em;
-        display: flex;
-        align-items: baseline;
-        gap: 1em;
-    }
-    nav a {
-        margin-inline-start: auto;
-    }
-    nav button,
-    nav a {
-        text-decoration: none;
-        font: inherit;
-        color: var(--link);
-        background: none;
-        cursor: pointer;
-        border: none;
-        font-weight: 500;
-    }
-    nav button:hover,
-    nav a:hover {
-        text-decoration: underline;
-    }
-    nav button {
-        position: relative;
-        margin: 0;
-        padding: 0;
-    }
-    nav button:disabled {
-        text-decoration: none;
-        cursor: unset;
-        color: var(--text);
-    }
-    nav button:disabled::after {
-        content: "";
-        position: absolute;
-        display: block;
-        top: calc(100% - 0.125em);
-        left: 50%;
-        background: var(--text);
-        width: 0.25em;
-        height: 0.25em;
-        border-radius: 100%;
-    }
+  nav {
+    margin-block-end: 2em;
+    display: flex;
+    align-items: baseline;
+    gap: 1em;
+  }
+  nav a {
+    margin-inline-start: auto;
+  }
+  nav button,
+  nav a {
+    text-decoration: none;
+    font: inherit;
+    color: var(--link);
+    background: none;
+    cursor: pointer;
+    border: none;
+    font-weight: 500;
+  }
+  nav button:hover,
+  nav a:hover {
+    text-decoration: underline;
+  }
+  nav button {
+    position: relative;
+    margin: 0;
+    padding: 0;
+  }
+  nav button:disabled {
+    text-decoration: none;
+    cursor: unset;
+    color: var(--text);
+  }
+  nav button:disabled::after {
+    content: "";
+    position: absolute;
+    display: block;
+    top: calc(100% - 0.125em);
+    left: 50%;
+    background: var(--text);
+    width: 0.25em;
+    height: 0.25em;
+    border-radius: 100%;
+  }
 </style>

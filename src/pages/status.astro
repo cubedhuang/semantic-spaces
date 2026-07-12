@@ -9,48 +9,44 @@ const threshold = 300;
 
 const empty = words.filter((word) => !word.body?.length);
 const short = words
-    .filter((word) => word.body && word.body.length < threshold)
-    .sort((a, b) => b.body.length - a.body.length);
+  .filter((word) => word.body && word.body.length < threshold)
+  .sort((a, b) => b.body.length - a.body.length);
 const done = words
-    .filter((word) => word.body && word.body.length >= threshold)
-    .sort((a, b) => b.body.length - a.body.length);
+  .filter((word) => word.body && word.body.length >= threshold)
+  .sort((a, b) => b.body.length - a.body.length);
 ---
 
 <Layout
-    title="Status | ilo Tani's Semantic Space Dictionary"
-    description="Progress"
+  title="Status | ilo Tani's Semantic Space Dictionary"
+  description="Progress"
 >
-    <h1>Status <a href="/">↩</a></h1>
+  <h1>Status <a href="/">↩</a></h1>
 
-    <p>
-        <b>{done.length} / {words.length}</b> entries done:
-        {
-            done.map((word, i) => (
-                <>
-                    <a href={`/${word.id}`}>{word.id}</a>
-                    <!-- prettier-ignore -->
-                    ({word.body.length}){i !== done.length - 1 && ", "}
-                </>
-            ))
-        }
-    </p>
-    <p>
-        <b>{short.length} / {words.length}</b> entries with fewer than {
-            threshold
-        } characters:
-        {
-            short.map((word, i) => (
-                <>
-                    <a href={`/${word.id}`}>{word.id}</a>
-                    <!-- prettier-ignore -->
-                    ({word.body.length}){i !== short.length - 1 && ", "}
-                </>
-            ))
-        }
-    </p>
-    <p>
-        <b>{empty.length} / {words.length}</b> entries empty: {
-            empty.map((word) => word.id).join(", ")
-        }
-    </p>
+  <p>
+    <b>{done.length} / {words.length}</b> entries done:
+    {
+      done.map((word, i) => (
+        <>
+          <a href={`/${word.id}`}>{word.id}</a>({word.body.length})
+          {`(${word.body.length})` + (i !== done.length - 1 && ", ")}
+        </>
+      ))
+    }
+  </p>
+  <p>
+    <b>{short.length} / {words.length}</b> entries with fewer than {threshold} characters:
+    {
+      short.map((word, i) => (
+        <>
+          <a href={`/${word.id}`}>{word.id}</a>
+          {`(${word.body.length})` + (i !== short.length - 1 && ", ")}
+        </>
+      ))
+    }
+  </p>
+  <p>
+    <b>{empty.length} / {words.length}</b> entries empty: {
+      empty.map((word) => word.id).join(", ")
+    }
+  </p>
 </Layout>

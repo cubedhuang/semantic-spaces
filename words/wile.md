@@ -1,4 +1,4 @@
-_wile_ is about desires and requirements. With an animate subject, a _wile_ is typically a desire. 
+_wile_ is about desires and requirements. With an animate subject, a _wile_ is typically a desire.
 
 :::ex
 tok: mi **wile** e moku suwi.
