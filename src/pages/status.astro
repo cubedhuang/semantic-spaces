@@ -3,16 +3,18 @@ import { getCollection } from "astro:content";
 
 import Layout from "../layouts/Layout.astro";
 
+import { countWords } from "../utils/countWords";
+
 const words = await getCollection("words");
 
-const threshold = 300;
+const threshold = 50;
 
 const empty = words.filter((word) => !word.body?.length);
 const short = words
-  .filter((word) => word.body && word.body.length < threshold)
+  .filter((word) => word.body && countWords(word.body) < threshold)
   .sort((a, b) => b.body.length - a.body.length);
 const done = words
-  .filter((word) => word.body && word.body.length >= threshold)
+  .filter((word) => word.body && countWords(word.body) >= threshold)
   .sort((a, b) => b.body.length - a.body.length);
 ---
 
@@ -26,7 +28,7 @@ const done = words
     <b>{done.length} / {words.length}</b> entries done: {
       done.map((word, i) => (
         <>
-          <a href={`/${word.id}`}>{word.id}</a> ({word.body.length})
+          <a href={`/${word.id}`}>{word.id}</a> ({countWords(word.body)})
           {i !== done.length - 1 && ", "}
         </>
       ))
@@ -34,10 +36,10 @@ const done = words
   </p>
   <p>
     <b>{short.length} / {words.length}</b> entries with fewer than {threshold}
-    {" "}characters: {
+    {" "}words: {
       short.map((word, i) => (
         <>
-          <a href={`/${word.id}`}>{word.id}</a> ({word.body.length})
+          <a href={`/${word.id}`}>{word.id}</a> ({countWords(word.body)})
           {i !== short.length - 1 && ", "}
         </>
       ))
