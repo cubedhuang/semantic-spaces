@@ -1,8 +1,8 @@
 _ante_ describes differences. This can refer to the difference between two objects or a change within in the same object.
 
 :::ex
-tok: sike wan taso la ona li kama **ante** a.
-en: In two years, she **changed** (lit. became **different**) a lot.
+tok: sike tu ni la ona li kama **ante** a.
+en: In these two years, she's **changed** (lit. become **different**) a lot.
 :::
 
 _ante_ can refer to the particular qualities that have changed or the act of the changing itself.
