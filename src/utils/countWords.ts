@@ -6,6 +6,6 @@ export function countWords(html: string): number {
     .replaceAll(",", ", ")
     .replace(/\s+/g, " ")
     .trim();
-  const words = plainText.split(/\W+/).filter(word => word.length);
+  const words = plainText.split(/\W+/).filter((word) => word.length);
   return words.length;
 }
