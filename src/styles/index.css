@@ -44,7 +44,8 @@ nav {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   line-height: 1.1;
   text-wrap: balance;
 }
@@ -67,6 +68,11 @@ h2 {
   margin-block: 1.333em 0.75em;
 }
 
+h3 {
+  font-size: 1.25em;
+  margin-block: 1.5em 1em;
+}
+
 p {
   margin-block-start: 0;
 }
@@ -80,9 +86,11 @@ a {
   margin-block-end: 1em;
   padding-left: 1em;
   border-left: 3px solid var(--link);
+  line-height: 1.5;
 }
 .example p {
   margin: 0;
+  margin-block-end: 0.25em;
 }
 .example [lang="tok"] {
   font-style: italic;

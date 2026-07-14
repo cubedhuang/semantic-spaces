@@ -43,7 +43,7 @@ words.sort((a, b) => a.id.localeCompare(b.id));
           <h2 id={word.id}>
             <a href={`/${word.id}`}>{word.id}</a>
           </h2>
-          <Content />
+          <Content components={{ h2: "h3" }} />
         </article>
       );
     })
