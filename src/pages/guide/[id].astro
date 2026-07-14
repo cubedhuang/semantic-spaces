@@ -3,7 +3,6 @@ import type { GetStaticPaths } from "astro";
 import { getCollection, render } from "astro:content";
 
 import Layout from "@layouts/Layout.astro";
-import { getOgDescription } from "@utils/getOgDescription";
 
 export const getStaticPaths = (async () => {
   const guides = await getCollection("guides");
@@ -14,8 +13,8 @@ const { id } = Astro.params;
 
 const guides = await getCollection("guides");
 const guide = guides.find((guide) => guide.id === id)!;
-const { Content } = await render(guide);
-const ogDescription = getOgDescription(guide.rendered?.html ?? "");
+const { Content, remarkPluginFrontmatter } = await render(guide);
+const { ogDescription } = remarkPluginFrontmatter;
 ---
 
 <Layout
