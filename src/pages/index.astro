@@ -22,6 +22,19 @@ words.sort((a, b) => a.id.localeCompare(b.id));
   <p>
     Check out the <a href="/status">status</a> page for progress information.
   </p>
+  <!-- <p>
+    In addition to explaining the semantic spaces of individual words, this
+    dictionary also contains guides to using categories of words and certain
+    concepts.
+  </p>
+  <ul>
+    <li>
+      Talk about <a href="/guide/colors">colors</a>.
+    </li>
+    <li>
+      Specify <a href="/guide/directions">locations and directions</a>.
+    </li>
+  </ul> -->
   {
     words.map(async (word) => {
       const { Content } = await render(word);

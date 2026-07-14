@@ -75,15 +75,15 @@ a {
   color: var(--link);
 }
 
-figure {
+.example {
   margin: 0;
   margin-block-end: 1em;
   padding-left: 1em;
   border-left: 3px solid var(--link);
 }
-figure p {
+.example p {
   margin: 0;
 }
-figure [lang="tok"] {
+.example [lang="tok"] {
   font-style: italic;
 }

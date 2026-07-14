@@ -2,31 +2,29 @@
 import type { GetStaticPaths } from "astro";
 import { getCollection, render } from "astro:content";
 
-import Layout from "../layouts/Layout.astro";
-import { getOgDescription } from "../utils/getOgDescription";
+import Layout from "../../layouts/Layout.astro";
+import { getOgDescription } from "../../utils/getOgDescription";
 
 export const getStaticPaths = (async () => {
-  const words = await getCollection("words");
-  words.sort((a, b) => a.id.localeCompare(b.id));
-  return words.map((word) => ({ params: { word: word.id } }));
+  const guides = await getCollection("guides");
+  return guides.map((guide) => ({ params: { id: guide.id } }));
 }) satisfies GetStaticPaths;
 
-const { word: wordId } = Astro.params;
+const { id } = Astro.params;
 
-const words = await getCollection("words");
-words.sort((a, b) => a.id.localeCompare(b.id));
-const word = words.find((word) => word.id === wordId)!;
-const { Content } = await render(word);
-const ogDescription = getOgDescription(word.rendered?.html ?? "");
+const guides = await getCollection("guides");
+const guide = guides.find((guide) => guide.id === id)!;
+const { Content } = await render(guide);
+const ogDescription = getOgDescription(guide.rendered?.html ?? "");
 ---
 
 <Layout
-  title={`${word.id} | ilo Tani's Semantic Space Dictionary`}
+  title={`${guide.data.title} | ilo Tani's Semantic Space Dictionary`}
   description={ogDescription}
 >
   <h1>
-    {wordId}
-    <a href={`/#${wordId}`} aria-label="Home">
+    {guide.data.title}
+    <a href="/" aria-label="Home">
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 16 16"

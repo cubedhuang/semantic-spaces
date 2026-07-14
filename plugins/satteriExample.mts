@@ -22,7 +22,11 @@ export default function satteriExample(): MdastPluginDefinition {
 
       return {
         ...node,
-        data: { ...node.data, hName: "figure" },
+        data: {
+          ...node.data,
+          hName: "figure",
+          hProperties: { class: "example" },
+        },
         children: sections.map(sectionToNode),
       };
     },
@@ -73,7 +77,6 @@ function sectionToNode(
   return {
     type: "paragraph",
     data: {
-      // @ts-expect-error hName doesn't have types but will be used
       hName: index === array.length - 1 ? "figcaption" : "p",
       hProperties: { lang: section.lang },
     },

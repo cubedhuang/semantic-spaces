@@ -2,6 +2,7 @@
 import { defineConfig } from "astro/config";
 import cloudflare from "@astrojs/cloudflare";
 import { satteri } from "@astrojs/markdown-satteri";
+import mdx from "@astrojs/mdx";
 
 import satteriExample from "./plugins/satteriExample.mjs";
 
@@ -9,6 +10,7 @@ import satteriExample from "./plugins/satteriExample.mjs";
 export default defineConfig({
   site: "https://kon.nimi.li",
   adapter: cloudflare(),
+  integrations: [mdx()],
   markdown: {
     processor: satteri({
       mdastPlugins: [satteriExample],
