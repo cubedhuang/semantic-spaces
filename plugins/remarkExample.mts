@@ -1,6 +1,6 @@
-import { defineMdastPlugin, type MdastPluginDefinition } from "satteri";
-import type { Paragraph, PhrasingContent, Text } from "mdast";
-import type { ContainerDirective } from "mdast-util-directive";
+import type { Paragraph, PhrasingContent, Root, Text } from "mdast";
+import { visit } from "unist-util-visit";
+import type { VFile } from "vfile";
 
 const PREFIX = /^\s*([A-Za-z][A-Za-z-]*)\s*:\s*/;
 
@@ -9,10 +9,9 @@ type Section = {
   children: PhrasingContent[];
 };
 
-export default function satteriExample(): MdastPluginDefinition {
-  return defineMdastPlugin({
-    name: "example",
-    containerDirective(node: ContainerDirective) {
+export default function remarkExample() {
+  return (tree: Root, file: VFile) => {
+    visit(tree, "containerDirective", (node) => {
       if (node.name !== "ex" && node.name !== "example") return;
 
       const p = node.children[0];
@@ -20,17 +19,13 @@ export default function satteriExample(): MdastPluginDefinition {
       const lines = splitLines(p.children);
       const sections = buildSections(lines);
 
-      return {
-        ...node,
-        data: {
-          ...node.data,
-          hName: "figure",
-          hProperties: { class: "example" },
-        },
-        children: sections.map(sectionToNode),
-      };
-    },
-  });
+      const data = node.data || (node.data = {});
+      data.hName = "figure";
+      const properties = data.hProperties || (data.hProperties = {});
+      properties.class = "example";
+      node.children = sections.map(sectionToNode);
+    });
+  };
 }
 
 function splitLines(nodes: readonly PhrasingContent[]): PhrasingContent[][] {

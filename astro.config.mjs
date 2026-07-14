@@ -1,10 +1,12 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import cloudflare from "@astrojs/cloudflare";
-import { satteri } from "@astrojs/markdown-satteri";
+import { unified } from "@astrojs/markdown-remark";
 import mdx from "@astrojs/mdx";
 
-import satteriExample from "./plugins/satteriExample.mjs";
+import remarkDirective from "remark-directive";
+import remarkExample from "./plugins/remarkExample.mjs";
+import remarkOgDescription from "./plugins/remarkOgDescription.mts";
 
 // https://astro.build/config
 export default defineConfig({
@@ -12,9 +14,8 @@ export default defineConfig({
   adapter: cloudflare(),
   integrations: [mdx()],
   markdown: {
-    processor: satteri({
-      mdastPlugins: [satteriExample],
-      features: { directive: true },
+    processor: unified({
+      remarkPlugins: [remarkDirective, remarkExample, remarkOgDescription],
     }),
   },
   prefetch: {
