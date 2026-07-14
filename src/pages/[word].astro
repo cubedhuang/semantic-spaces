@@ -2,8 +2,8 @@
 import type { GetStaticPaths } from "astro";
 import { getCollection, render } from "astro:content";
 
-import Layout from "../layouts/Layout.astro";
-import { getOgDescription } from "../utils/getOgDescription";
+import Layout from "@layouts/Layout.astro";
+import { getOgDescription } from "@utils/getOgDescription";
 
 export const getStaticPaths = (async () => {
   const words = await getCollection("words");

@@ -1,9 +1,9 @@
 ---
 import { getCollection } from "astro:content";
 
-import Layout from "../layouts/Layout.astro";
+import Layout from "@layouts/Layout.astro";
 
-import { countWords } from "../utils/countWords";
+import { countWords } from "@utils/countWords";
 
 const words = await getCollection("words");
 
