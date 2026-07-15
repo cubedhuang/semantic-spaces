@@ -30,11 +30,19 @@ const wheelLabels = colors.map((name, i) => {
   const mid = ((a1 + a2) / 2) % 360;
   return { name, ...point(mid, labelR) };
 });
+
+// iOS has this weird glitch where `in oklch` has a seam for conic gradients
+// so we add a bunch of oklch stops and just interpolate in sRGB instead
+const stops: string[] = [];
+for (let deg = 0; deg <= 360; deg += 15) {
+  stops.push(`oklch(0.8 0.25 ${deg})`);
+}
+const wheelRingBackground = `background:conic-gradient(from 60deg,${stops.join(",")})`;
 ---
 
 <div class="figures">
   <figure class="wheel">
-    <div class="wheel-ring"></div>
+    <div class="wheel-ring" style={wheelRingBackground}></div>
     <svg viewBox={`0 0 ${size} ${size}`} class="wheel-labels">
       {
         wheelLines.map(({ inner, outer }) => (
@@ -91,13 +99,6 @@ const wheelLabels = colors.map((name, i) => {
     width: var(--figure-size);
     aspect-ratio: 1;
     border-radius: 50%;
-    background: conic-gradient(
-      in oklch from 60deg,
-      oklch(0.8 0.25 0),
-      oklch(0.8 0.25 120),
-      oklch(0.8 0.25 240),
-      oklch(0.8 0.25 360)
-    );
     mask: radial-gradient(circle, transparent 50%, black 50%);
   }
   .wheel-labels {
