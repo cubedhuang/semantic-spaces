@@ -2,14 +2,27 @@
 title: "Colors in Toki Pona"
 ---
 
-import ColorExample from "@components/ColorExample.astro";
+import ColorWheel from "@components/ColorWheel.astro";
+import ColorExamples from "@components/ColorExamples.astro";
 
 Toki Pona has five color words: _walo_, _pimeja_, _loje_, _jelo_, and _laso_. _walo_ and _pimeja_ describe lightness, and the other three describe hue.
 
-## Hue
+## Basic color terms
 
 Color words in Toki Pona are much broader than in English. _loje_ refers to reds, pinks, and oranges. _jelo_ refers to yellows as well as some oranges and greenish-yellows. _laso_ is broad, referring to greens, blues, and some purples.
 
-<ColorExample />
+<ColorWheel />
 
-Categorization of colors differs between languages.
+This follows from the [color-term hierarchy](https://en.wikipedia.org/wiki/Color_term#Color-term_hierarchy) seen in natural languages. When a natural language has 5 basic color terms, it typically places blue and green in the [same category](https://en.wikipedia.org/wiki/Blue%E2%80%93green_distinction_in_language).
+
+While _walo_ and _pimeja_ primarily describe lightness, they may also be used to describe light and dark colors that aren't neutral; for instance, _pimeja_ is often used to describe brown.
+
+## Color terms in use
+
+Although Toki Pona places the English categories _green_ and _blue_ under the same umbrella, Toki Pona speakers rarely specify the difference. Color terms are almost always used in context to specify in _comparison_ with other colors.
+
+<ColorExamples />
+
+The lime color is better described as _laso_ in the first instance, but when compared to a deep blue, it's better described as _jelo_. The blue is easily described by _laso_ in the second example, but it may also be described withh _pimeja_ like in the third example.
+
+When colors modify each other, the first color is the primary one. A _laso jelo_ is a yellowish green which is closer to _laso_, and a _jelo laso_ is a greenish yellow which is closer to _jelo_.

@@ -28,7 +28,7 @@ const done = words
     <b>{done.length} / {words.length}</b> entries done: {
       done.map((word, i) => (
         <>
-          <a href={`/${word.id}`}>{word.id}</a> ({countWords(word.body)})
+          <a href={`/${word.id}`}>{word.id}</a> ({countWords(word.body!)})
           {i !== done.length - 1 && ", "}
         </>
       ))
@@ -39,7 +39,7 @@ const done = words
     {" "}words: {
       short.map((word, i) => (
         <>
-          <a href={`/${word.id}`}>{word.id}</a> ({countWords(word.body)})
+          <a href={`/${word.id}`}>{word.id}</a> ({countWords(word.body!)})
           {i !== short.length - 1 && ", "}
         </>
       ))

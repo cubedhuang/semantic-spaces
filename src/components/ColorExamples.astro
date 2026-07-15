@@ -1,0 +1,53 @@
+<div class="palettes">
+  <div class="palette">
+    <div class="color yellow">jelo</div>
+    <div class="color lime">laso</div>
+  </div>
+  <div class="palette">
+    <div class="color lime">jelo</div>
+    <div class="color blue">laso</div>
+  </div>
+  <div class="palette">
+    <div class="color yellow">jelo</div>
+    <div class="color lime">laso</div>
+    <div class="color blue">pimeja</div>
+  </div>
+</div>
+
+<style>
+  .palettes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1em 2em;
+    column-rule: 1px solid var(--muted);
+    font-style: italic;
+    font-weight: 500;
+    margin-block: 2em;
+  }
+  .palette {
+    display: flex;
+    padding-inline: 1em;
+  }
+  .color {
+    width: 3.5em;
+    display: grid;
+    place-items: center;
+  }
+  .color::before {
+    width: 3em;
+    height: 3em;
+    border-radius: 100%;
+    content: "";
+    background: var(--color);
+  }
+  .yellow {
+    --color: oklch(0.8 0.4 100);
+  }
+  .lime {
+    --color: oklch(0.8 0.4 120);
+  }
+  .blue {
+    --color: oklch(0.3 0.2 220);
+  }
+</style>
