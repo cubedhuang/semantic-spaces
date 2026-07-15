@@ -1,14 +1,14 @@
 ---
 const size = 300;
 
-const lines = [40, 140, 200];
+const lines = [30, 140, 190];
 const colors = ["loje", "jelo", "laso"];
 
 const cx = size / 2;
 const cy = size / 2;
 const innerR = size / 5;
-const outerR = size / 2;
-const labelR = outerR * 0.5;
+const outerR = (size / 2 / Math.sqrt(2)) * 0.9;
+const labelR = size / 4;
 
 function point(angle: number, r: number) {
   const rad = (angle * Math.PI) / 180;
@@ -44,7 +44,7 @@ const wheelLabels = colors.map((name, i) => {
             x2={outer.x}
             y2={outer.y}
             stroke="var(--text)"
-            stroke-width="3"
+            stroke-width="2"
           />
         ))
       }
