@@ -12,15 +12,15 @@ const threshold = 50;
 const empty = words.filter((word) => !word.body?.length);
 const short = words
   .filter((word) => word.body && countWords(word.body) < threshold)
-  .sort((a, b) => b.body.length - a.body.length);
+  .sort((a, b) => b.body!.length - a.body!.length);
 const done = words
   .filter((word) => word.body && countWords(word.body) >= threshold)
-  .sort((a, b) => b.body.length - a.body.length);
+  .sort((a, b) => b.body!.length - a.body!.length);
 ---
 
 <Layout
-  title="Status | ilo Tani's Semantic Space Dictionary"
-  description="Progress"
+  title="Status"
+  description="Progress information on dictionary completion."
 >
   <h1>Status <a href="/">↩</a></h1>
 

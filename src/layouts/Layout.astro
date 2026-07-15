@@ -7,7 +7,7 @@ import ThemeSelector from "@components/ThemeSelector.astro";
 import ThemeSelectorScript from "@components/ThemeSelectorScript.astro";
 
 interface Props {
-  title: string;
+  title?: string;
   description: string;
 }
 
@@ -29,22 +29,22 @@ const siteName = "ilo Tani's Semantic Space Dictionary";
     {!noUrl && <link rel="canonical" href={canonicalUrl} />}
 
     <!-- Primary Meta Tags -->
-    <title>{title}</title>
-    <meta name="title" content={title} />
+    <title>{title && title + " | "}{siteName}</title>
+    <meta name="title" content={title ?? siteName} />
     <meta name="description" content={description} />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     {!noUrl ? <meta property="og:url" content={Astro.url} /> : ""}
     <meta property="og:site_name" content={siteName} />
-    <meta property="og:title" content={title} />
+    <meta property="og:title" content={title ?? siteName} />
     <meta property="og:description" content={description} />
     <!-- <meta property="og:image" content={socialImageURL} /> -->
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary" />
     {!noUrl ? <meta property="twitter:url" content={Astro.url} /> : ""}
-    <meta property="twitter:title" content={title} />
+    <meta property="twitter:title" content={title ?? siteName} />
     <meta property="twitter:description" content={description} />
     <!-- <meta property="twitter:image" content={socialImageURL} /> -->
 

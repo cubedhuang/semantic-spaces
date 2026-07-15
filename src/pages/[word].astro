@@ -19,10 +19,7 @@ const { Content, remarkPluginFrontmatter } = await render(word);
 const { ogDescription } = remarkPluginFrontmatter;
 ---
 
-<Layout
-  title={`${word.id} | ilo Tani's Semantic Space Dictionary`}
-  description={ogDescription}
->
+<Layout title={word.id} description={ogDescription}>
   <h1>
     {wordId}
     <a href={`/#${wordId}`} aria-label="Home">

@@ -17,10 +17,7 @@ const { Content, remarkPluginFrontmatter } = await render(guide);
 const { ogDescription } = remarkPluginFrontmatter;
 ---
 
-<Layout
-  title={`${guide.data.title} | ilo Tani's Semantic Space Dictionary`}
-  description={ogDescription}
->
+<Layout title={guide.data.title} description={ogDescription}>
   <h1>
     {guide.data.title}
     <a href="/" aria-label="Home">
