@@ -15,8 +15,8 @@ en: We'll need to clean up when the party is **over**.
 The temporal meaning extends to refer to the _past_ in general.
 
 :::ex
-tok: lipu pini li pona a tawa lipu ni
-en: The previous book was way better than this one.
+tok: lipu **pini** li pona a tawa lipu ni
+en: The **previous** book was way better than this one.
 :::
 
 :::ex
@@ -25,3 +25,8 @@ en: In the **past**, she ate meat.
 :::
 
 _pini_ is also used to describe closed _lupa_ and _poki_.
+
+:::ex
+tok: tomo ni li **pini** la mi sona ala e ijo insa.
+en: This room is **locked**, so we don't know what's inside.
+:::
